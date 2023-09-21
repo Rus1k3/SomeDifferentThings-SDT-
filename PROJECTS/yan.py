@@ -37,13 +37,15 @@ def get_offers(r):
 
     offers = data['map']['offers']['points']
     
+    #вот это вот фор достает нужное настраивается все через него
     for offer in offers:
         url_off = offer['url']
         area = offer['area']['value']
         price = offer['price']['value']
         adres = offer['location']['address']
         
-        print(area, price, url_off, adres, sep=', ')
+        #тоже нужная вещь для настройки(в идиале не трогать)
+        # print(area, price, url_off, adres, sep=', ')
 
         data_offer = {
             'adress': adres,
