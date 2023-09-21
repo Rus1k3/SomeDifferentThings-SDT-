@@ -3,6 +3,8 @@ from selectolax.parser import HTMLParser as HP #да да хюлет пакар�
 from fake_useragent import UserAgent
 import json
 import csv
+import time
+
 
 #юсер агент
 ua = UserAgent()
@@ -56,6 +58,8 @@ def get_offers(r):
 
         write_to_csv('yan.csv', data_offer)
 
+        time.sleep(60)
+        
     return page_numb
 
 
