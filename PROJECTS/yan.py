@@ -47,7 +47,7 @@ def get_offers(r):
         adres = offer['location']['address']
         
         #тоже нужная вещь для настройки(в идиале не трогать)
-        # print(area, price, url_off, adres, sep=', ')
+        print(area, price, url_off, adres, sep=', ')
 
         # data_offer = {
         #     'adress': adres,
@@ -71,7 +71,7 @@ def main():
                ('page', page),
           )
         
-        url = 'https://realty.ya.ru/moskva/kupit/kvartira/bez-posrednikov/?page=1'
+        url = 'https://realty.ya.ru/moskva/snyat/kvartira/bez-posrednikov/?page=1'
         
         r = requests.get(url, params=params, headers=headers)
         page_numb = get_offers(r)
