@@ -2,7 +2,7 @@ import requests
 from selectolax.parser import HTMLParser as HP #да да хюлет пакарт ака эйч пи ака ноутбуки XD
 from fake_useragent import UserAgent
 import json
-import csv
+# import csv
 import time
 
 
@@ -11,9 +11,9 @@ ua = UserAgent()
 headers = {'User-Agent': ua.opera}
 
 #запись в файл
-def write_to_csv(filename, data):
-    with open(filename, 'a', encoding='utf-8', newline = '') as file:
-        csv.DictWriter(file, filednames=list(data)).writerow(data)
+# def write_to_csv(filename, data):
+#     with open(filename, 'a', encoding = 'utf-8', newline = '') as file:
+#         csv.DictWriter(file, filednames = list(data)).writerow(data)
 
 
 
@@ -49,16 +49,16 @@ def get_offers(r):
         #тоже нужная вещь для настройки(в идиале не трогать)
         # print(area, price, url_off, adres, sep=', ')
 
-        data_offer = {
-            'adress': adres,
-            'area': area,
-            'price': price,
+        # data_offer = {
+        #     'adress': adres,
+        #     'area': area,
+        #     'price': price,
 
-        }
+        # }
 
-        write_to_csv('yan.csv', data_offer)
+        # write_to_csv('yandexpars.csv', data_offer)
 
-        time.sleep(60)
+        time.sleep(30)
         
     return page_numb
 
@@ -75,7 +75,6 @@ def main():
         
         r = requests.get(url, params=params, headers=headers)
         page_numb = get_offers(r)
-        print(page, page_numb)
 
         if page > int(page_numb):
             break
