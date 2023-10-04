@@ -5,7 +5,7 @@ def random_str():
 
     rand_str = ''
     
-    for _ in range(1000):
+    for x in range(1000):
 
         while True:
             try:
